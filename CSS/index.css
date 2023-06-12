@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --clr-primary-100: hsl(0, 0%, 100%);
+  --clr-primary-200: hsl(0, 0%, 17%);
+  --clr-primary-300: hsl(0, 0%, 59%);
+  --fw-100: 400;
+  --fw-200: 500;
+  --fw-300: 700;
+  --ff-primary: "Rubik";
+}
+
+/* CSS Resets */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  font-family: inherit;
+  color: inherit;
+  outline: 0 solid transparent;
+  border: 0 solid transparent;
+}
+
+button {
+  outline: 0 solid transparent;
+  border: 0 solid transparent;
+}
+
+/* Utility Classes */
+.flex {
+  display: flex;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.sr-only {
+  clip-path: circle(0);
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-accent-100 {
+  color: var(--clr-primary-100);
+}
+
+.text-accent-200 {
+  color: var(--clr-primary-200);
+}
+
+.text-accent-300 {
+  color: var(--clr-primary-300);
+}
+
+.fw-100 {
+  font-weight: var(--fw-100);
+}
+
+.fw-200 {
+  font-family: var(--fw-200);
+}
+
+.fw-300 {
+  font-weight: var(--fw-300);
+}
+
+.bg-white {
+  background-color: var(--clr-primary-100);
+}
+
+/* --COMPONENT-STYLING ---*/
+/* --Css generic element styling--- */
+body {
+  font-family: var(--ff-primary);
+}
+
+/*--- Class Components styling---- */
+/* HEADER SECTION */
+.header {
+  background-image: url("../images/pattern-bg-desktop.png");
+  place-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-block-start: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.header__main-heading {
+}
+
+.header__searchbar {
+  border-radius: 10px;
+  overflow: hidden;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.header__searchbar input {
+  padding: 1rem 1.5rem;
+  flex-grow: 1;
+  /* font-size: 1.125rem; */
+}
+
+.header__searchbtn {
+  background-color: var(--clr-primary-200);
+  width: 3rem;
+  cursor: pointer;
+}
+
+.header__search-results {
+  width: 90%;
+  /* background-color: aqua; */
+  border-radius: 5px;
+  overflow: hidden;
+  transform: translateY(40%);
+  flex-wrap: wrap;
+}
+
+.header__searchbtn:hover {
+  background-color: hsl(0, 0%, 29%);
+}
+
+.header__search-result {
+  flex-direction: column;
+  position: relative;
+  gap: 1rem;
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+.search-result-data  {
+  font-size: 1.125rem;
+}
+
+.header__search-result:not(:last-child)::after {
+  background-color: var(--clr-primary-300);
+  content: '';
+  position: absolute;
+  display: block;
+  right: 0;
+  height: 4rem;
+  width: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* MAIN BODY */
+#map {
+  /* min-height: 60vh; */
+}
+
+@media (min-width: 700px) {
+  .header__searchbar {
+    width: 45%;
+  }
+  .header__search-results {
+    width: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    background-image: url("../images/pattern-bg-mobile.png");
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | IP Address Tracker</title>
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script> -->
+  </head>
+  <body>
+    <header class="header flex">
+      <h1 class="header__main-heading capitalize text-accent-100 fw-100">
+        IP address tracker
+      </h1>
+      <div class="header__searchbar flex">
+        <input id="searchBar" placeholder="Search for any IP address or domain" class="text-accent-200 fw-100"/>
+        <button class="header__searchbtn">
+          <span class="sr-only">search</span>
+          <img src="./images/icon-arrow.svg" />
+        </button>
+      </div>
+      <div class="header__search-results bg-white flex">
+        <div id="ipAddress" class="header__search-result flex">
+          <h5 class="text-accent-300 fw-200 uppercase">ip address</h5>
+          <p class="search-result-data text-accent-200 fw-300">909</p>
+        </div>
+        <div id="location" class="header__search-result flex">
+          <h5 class="text-accent-300 fw-200 uppercase"></h5>
+          <p class="search-result-data text-accent-200 fw-300"></p>
+        </div>
+        <div id="timezone" class="header__search-result flex">
+          <h5 class="text-accent-300 fw-200 uppercase"></h5>
+          <p class="search-result-data text-accent-200 fw-300"></p>
+        </div>
+        <div id="isp" class="header__search-result flex">
+          <h5 class="text-accent-300 fw-200 uppercase"></h5>
+          <p class="search-result-data text-accent-200 fw-300"></p>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div id="map"></div>
+    </main>
+    <script type="module" src="/src/index.ts"></script>
+  </body>
+</html>
