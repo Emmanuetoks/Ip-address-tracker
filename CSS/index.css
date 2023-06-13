@@ -109,7 +109,7 @@ min-height:30vh;
   background-image: url("../public/images/pattern-bg-desktop.png");
   place-items: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   padding-block-start: 2rem;
   flex-direction: column;
   justify-content: center;
@@ -269,6 +269,6 @@ min-height:30vh;
 @media (max-width: 800px) {
   .header {
     background-image: url("../public/images/pattern-bg-mobile.png");
-    background-size: contain;
+    /*background-size: contain;*/
   }
 }
