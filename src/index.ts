@@ -7,8 +7,12 @@ const searchBtn = <HTMLButtonElement>document.getElementById("searchBtn");
 const API_KEY: string = "at_belSPVglRs4FaR8mRJ3GMqX1kwU3E";
 let API_URI: string = "https://geo.ipify.org/api/v2/country,city";
 const searchResults = document.querySelectorAll(".header__search-result");
-let map;
-console.log(map);
+
+let map = L.map("map", {
+  zoom: 40,
+  zoomControl: true,
+  doubleClickZoom: true,
+});
 
 // Global Variables
 let searchInput: string = "";
@@ -18,10 +22,6 @@ let mapCoor: number[];
 // Utility functions
 function init() {
   const requestType = ipAddressRegex.test(searchInput) ? "ipAddress" : "domain";
-
-  console.log(requestType);
-
-  console.log(`${API_URI}?apiKey=${API_KEY}&${requestType}=${searchInput}`);
 
   async function getData() {
     try {
@@ -37,15 +37,13 @@ function init() {
       console.log(error);
     }
   }
+
   getData();
+  searchBar.value = "";
 }
 
 function getMap(coor: number[]) {
-  map = L.map("map", {
-    center: coor,
-    zoom: 18,
-    zoomControl: false,
-  });
+  map.setView(coor, 13);
   L.tileLayer(
     "https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=MXsJ5e0B7SZOvcTRu5c3",
     {
@@ -89,3 +87,7 @@ searchBar.addEventListener("keyup", (e): void => {
 window.addEventListener("load", init);
 
 searchBtn.addEventListener("click", init);
+
+searchBar.addEventListener("keydown", (e) => {
+  e.key === "Enter" && init();
+});
