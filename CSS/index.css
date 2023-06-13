@@ -178,12 +178,14 @@ min-height:30vh;
 
 /* MAIN BODY */
 #map {
-  min-height: 70vh;
+  height: inherit;
   z-index: -999;
 }
 
 .main {
   flex-grow: 1;
+width:100%;
+  height: 100%;
 }
 
 .loader-container {
