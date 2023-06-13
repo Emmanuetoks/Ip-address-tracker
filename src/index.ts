@@ -1,3 +1,6 @@
+// import {L} from 'leaflet'
+import L from "leaflet";
+
 // DOM Elements
 const searchBar = <HTMLInputElement>document.getElementById("searchBar");
 const searchBtn = <HTMLButtonElement>document.getElementById("searchBtn");
@@ -47,7 +50,7 @@ function init() {
   searchInput = "";
 }
 
-function getMap(coor: number[]) {
+function getMap(coor: any) {
   map.setView(coor, 13);
   L.tileLayer(
     "https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=MXsJ5e0B7SZOvcTRu5c3",
@@ -84,9 +87,10 @@ function displaySearchResults(data: any) {
   });
 }
 
+
 //Attach Event Listeners
-searchBar.addEventListener("keyup", (e): void => {
-  searchInput = e.target?.value;
+searchBar.addEventListener("keyup", (e:any): void => {
+  searchInput = e?.target?.value;
 });
 
 window.addEventListener("load", init);
@@ -101,3 +105,5 @@ searchBtn.addEventListener("click", init);
 searchBar.addEventListener("keydown", (e) => {
   e.key === "Enter" && init();
 });
+
+
