@@ -139,9 +139,9 @@ min-height:30vh;
   z-index: 10;
   border-radius: 5px;
   overflow: hidden;
-  transform: translateY(40%);
+  transform: translateY(20%);
   flex-direction: column;
-  position: static;
+  position: absolute;
   outline: 1px solid rgba(0, 0, 0, 0.205);
 }
 
