@@ -270,6 +270,7 @@ min-height:30vh;
   .header {
     background-image: url("../public/images/pattern-bg-mobile.png");
     background-size: auto;
+    background-position:center;
     /*background-size: contain;*/
   }
 }
