@@ -101,7 +101,7 @@ body {
 /*--- Class Components styling---- */
 /* HEADER SECTION */
 .header {
-  background-image: url("../images/pattern-bg-desktop.png");
+  background-image: url("../public/images/pattern-bg-desktop.png");
   place-items: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -111,8 +111,6 @@ body {
   gap: 2rem;
 }
 
-.header__main-heading {
-}
 
 .header__searchbar {
   border-radius: 10px;
@@ -135,7 +133,7 @@ body {
 
 .header__search-results {
   width: 90%;
-  /* background-color: aqua; */
+  z-index: 2;
   border-radius: 5px;
   overflow: hidden;
   transform: translateY(40%);
@@ -172,10 +170,10 @@ body {
 
 /* MAIN BODY */
 #map {
-  /* min-height: 60vh; */
+  min-height: 60vh;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 50rem) {
   .header__searchbar {
     width: 45%;
   }
