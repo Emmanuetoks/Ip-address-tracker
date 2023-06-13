@@ -135,7 +135,7 @@ min-height:30vh;
 }
 
 .header__search-results {
-  width: 90%;
+  width: 70%;
   z-index: 10;
   border-radius: 5px;
   overflow: hidden;
@@ -275,5 +275,6 @@ min-height:30vh;
   }
   .header__search-results {
     position: absolute;
+    transform: translateY(40%);
 }
 }
