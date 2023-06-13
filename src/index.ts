@@ -1,12 +1,13 @@
-import { ipifyRequestOptions } from "./vite-env";
-
-// let map:any = L.map('map').setView([51.505, -0.09], 13);
 // DOM Elements
 const searchBar = <HTMLInputElement>document.getElementById("searchBar");
 const searchBtn = <HTMLButtonElement>document.getElementById("searchBtn");
 const API_KEY: string = "at_belSPVglRs4FaR8mRJ3GMqX1kwU3E";
 let API_URI: string = "https://geo.ipify.org/api/v2/country,city";
 const searchResults = document.querySelectorAll(".header__search-result");
+const loader = <HTMLDivElement>document.querySelector(".loader-container");
+const loaderMap = <HTMLDivElement>(
+  document.querySelector(".loader-container--map")
+);
 
 let map = L.map("map", {
   zoom: 40,
@@ -22,7 +23,9 @@ let mapCoor: number[];
 // Utility functions
 function init() {
   const requestType = ipAddressRegex.test(searchInput) ? "ipAddress" : "domain";
+  // if (loaderMap.classList.contains('loader--map-exit'))
 
+  loaderMap.classList.add("loader--map-exit");
   async function getData() {
     try {
       const res = await fetch(
@@ -33,6 +36,7 @@ function init() {
       mapCoor = [data.location.lat, data.location.lng];
       getMap(mapCoor);
       displaySearchResults(data);
+      loaderMap.classList.remove("loader--map-exit");
     } catch (error) {
       console.log(error);
     }
@@ -40,6 +44,7 @@ function init() {
 
   getData();
   searchBar.value = "";
+  searchInput = "";
 }
 
 function getMap(coor: number[]) {
@@ -85,6 +90,11 @@ searchBar.addEventListener("keyup", (e): void => {
 });
 
 window.addEventListener("load", init);
+window.addEventListener("load", () => {});
+
+map.addEventListener("load", () => {
+  loader.classList.add("loader-exit");
+});
 
 searchBtn.addEventListener("click", init);
 

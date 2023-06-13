@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frontend Mentor | IP Address Tracker</title>
     <link rel="stylesheet" href="./CSS/index.css" />
+    <link rel="stylesheet" href="./CSS/loader.css" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -18,8 +19,8 @@
       crossorigin=""
     ></script>
   </head>
-  <body>
-    <header class="header flex">
+  <body class="pos-rel flex">
+    <header class="header flex pos-rel">
       <h1 class="header__main-heading capitalize text-accent-100 fw-100">
         IP address tracker
       </h1>
@@ -34,7 +35,7 @@
           <img src="./images/icon-arrow.svg" />
         </button>
       </div>
-      <div class="header__search-results bg-white flex">
+      <div class="header__search-results bg-white flex ">
         <div id="ip" class="header__search-result flex">
           <h5 class="text-accent-300 fw-200 uppercase">ip address</h5>
           <p class="search-result-data text-accent-200 fw-300"></p>
@@ -53,7 +54,7 @@
         </div>
       </div>
     </header>
-    <div class="loader">
+    <div class="loader-container">
       <div class="lds-roller">
         <div></div>
         <div></div>
@@ -66,8 +67,19 @@
       </div>
     </div>
 
-    <main class="main">
+    <main class="main pos-rel">
       <div id="map"></div>
+      <div class="loader-container--map loader--map-exit">
+        <div class="lds-roller">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
     </main>
     <script type="module" src="/src/index.ts"></script>
   </body>

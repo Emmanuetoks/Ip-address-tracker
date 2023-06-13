@@ -92,16 +92,19 @@ button {
   background-color: var(--clr-primary-100);
 }
 
+
 /* --COMPONENT-STYLING ---*/
 /* --Css generic element styling--- */
 body {
   font-family: var(--ff-primary);
+  overflow-x: hidden;
+  flex-direction: column;
 }
 
 /*--- Class Components styling---- */
 /* HEADER SECTION */
 .header {
-  min-height: 30vh;
+  /* min-height: 20vh; */
   background-image: url("../public/images/pattern-bg-desktop.png");
   place-items: center;
   background-repeat: no-repeat;
@@ -122,7 +125,6 @@ body {
 .header__searchbar input {
   padding: 1rem 1.5rem;
   flex-grow: 1;
-  /* font-size: 1.125rem; */
 }
 
 .header__searchbtn {
@@ -138,7 +140,8 @@ body {
   overflow: hidden;
   transform: translateY(40%);
   flex-direction: column;
-  position: sticky;
+  position: static;
+  outline: 1px solid rgba(0, 0, 0, 0.205);
 }
 
 .header__searchbtn:hover {
@@ -178,13 +181,63 @@ body {
   z-index: -999;
 }
 
+.main {
+  flex-grow: 1;
+}
 
-/* .loader {
-  width: 10rem;  
+.loader-container {
+  z-index: 10;
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  width: 100%;
   aspect-ratio: 1 /1;
-  background-color: red;
-} */
+  background-color: #fff;
+  display: grid;
+  place-items: center;
+  animation-fill-mode: forwards;
+}
 
+.loader-exit {
+  animation-name: loader-exit;
+  animation-duration: 1000ms;
+  /* display: none; */
+}
+
+@keyframes loader-exit {
+  0% {
+    transition: opacity;
+    /* transition-duration: 500ms; */
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+    z-index: -999;
+  }
+}
+
+.loader-container--map {
+  width: fit-content;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  display: none;
+  top: 0;
+}
+
+.loader--map-exit {
+  display: inline-block;
+}
 
 @media (min-width: 60rem) {
   .header__searchbar {
@@ -193,6 +246,7 @@ body {
   .header__search-results {
     width: 70%;
     flex-direction: row;
+    /* position: absolute; */
   }
 
   .header__search-result:not(:last-child)::after {
@@ -211,8 +265,9 @@ body {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .header {
     background-image: url("../public/images/pattern-bg-mobile.png");
+    min-height: 10vh;
   }
 }
