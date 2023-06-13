@@ -101,6 +101,7 @@ body {
 /*--- Class Components styling---- */
 /* HEADER SECTION */
 .header {
+  min-height: 30vh;
   background-image: url("../public/images/pattern-bg-desktop.png");
   place-items: center;
   background-repeat: no-repeat;
@@ -110,7 +111,6 @@ body {
   justify-content: center;
   gap: 2rem;
 }
-
 
 .header__searchbar {
   border-radius: 10px;
@@ -133,11 +133,12 @@ body {
 
 .header__search-results {
   width: 90%;
-  z-index: 2;
+  z-index: 10;
   border-radius: 5px;
   overflow: hidden;
   transform: translateY(40%);
-  flex-wrap: wrap;
+  flex-direction: column;
+  position: sticky;
 }
 
 .header__searchbtn:hover {
@@ -148,42 +149,70 @@ body {
   flex-direction: column;
   position: relative;
   gap: 1rem;
-  padding: 2rem;
+  padding: 1rem;
   flex-grow: 1;
-}
-
-.search-result-data  {
-  font-size: 1.125rem;
+  align-items: center;
 }
 
 .header__search-result:not(:last-child)::after {
   background-color: var(--clr-primary-300);
-  content: '';
+  content: "";
   position: absolute;
   display: block;
-  right: 0;
-  height: 4rem;
-  width: 1px;
-  top: 50%;
-  transform: translateY(-50%);
+  width: 50%;
+  height: 1px;
+  top: auto;
+  bottom: 0;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+.search-result-data {
+  font-size: 1.125rem;
 }
 
 /* MAIN BODY */
 #map {
   min-height: 60vh;
+  z-index: -999;
 }
 
-@media (min-width: 50rem) {
+
+/* .loader {
+  width: 10rem;  
+  aspect-ratio: 1 /1;
+  background-color: red;
+} */
+
+
+@media (min-width: 60rem) {
   .header__searchbar {
     width: 45%;
   }
   .header__search-results {
     width: 70%;
+    flex-direction: row;
+  }
+
+  .header__search-result:not(:last-child)::after {
+    height: 4rem;
+    width: 1px;
+    right: 0;
+    top: 50%;
+    bottom: auto;
+    left: auto;
+    transform: translateY(-50%);
+  }
+
+  .header__search-result {
+    align-items: normal;
+    padding: 2rem;
   }
 }
 
 @media (max-width: 500px) {
   .header {
-    background-image: url("../images/pattern-bg-mobile.png");
+    background-image: url("../public/images/pattern-bg-mobile.png");
   }
 }

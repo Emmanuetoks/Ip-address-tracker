@@ -24,7 +24,11 @@
         IP address tracker
       </h1>
       <div class="header__searchbar flex">
-        <input id="searchBar" placeholder="Search for any IP address or domain" class="text-accent-200 fw-100"/>
+        <input
+          id="searchBar"
+          placeholder="Search for any IP address or domain"
+          class="text-accent-200 fw-100"
+        />
         <button id="searchBtn" class="header__searchbtn">
           <span class="sr-only">search</span>
           <img src="./images/icon-arrow.svg" />
@@ -33,22 +37,34 @@
       <div class="header__search-results bg-white flex">
         <div id="ip" class="header__search-result flex">
           <h5 class="text-accent-300 fw-200 uppercase">ip address</h5>
-          <p class="search-result-data text-accent-200 fw-300">909</p>
+          <p class="search-result-data text-accent-200 fw-300"></p>
         </div>
-        <div id="location" class="header__search-result flex">
-          <h5 class="text-accent-300 fw-200 uppercase"></h5>
+        <div id="city" class="header__search-result flex">
+          <h5 class="text-accent-300 fw-200 uppercase">location</h5>
           <p class="search-result-data text-accent-200 fw-300"></p>
         </div>
         <div id="timezone" class="header__search-result flex">
-          <h5 class="text-accent-300 fw-200 uppercase"></h5>
+          <h5 class="text-accent-300 fw-200 uppercase">timezone</h5>
           <p class="search-result-data text-accent-200 fw-300"></p>
         </div>
         <div id="isp" class="header__search-result flex">
-          <h5 class="text-accent-300 fw-200 uppercase"></h5>
+          <h5 class="text-accent-300 fw-200 uppercase">isp</h5>
           <p class="search-result-data text-accent-200 fw-300"></p>
         </div>
       </div>
     </header>
+    <div class="loader">
+      <div class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
 
     <main class="main">
       <div id="map"></div>
