@@ -273,7 +273,7 @@ min-height:30vh;
     background-position:center;
     /*background-size: contain;*/
   }
-  .header-results {
+  .header__search-results {
     position: absolute;
 }
 }
