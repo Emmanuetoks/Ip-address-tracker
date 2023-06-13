@@ -178,7 +178,7 @@ min-height:30vh;
 
 /* MAIN BODY */
 #map {
-  min-height: 100%;
+  min-height: 70vh;
   z-index: -999;
 }
 
@@ -266,9 +266,9 @@ min-height:30vh;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .header {
     background-image: url("../public/images/pattern-bg-mobile.png");
-    
+    background-size: contain;
   }
 }
