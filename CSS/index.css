@@ -275,6 +275,6 @@ min-height:30vh;
   }
   .header__search-results {
     position: absolute;
-    transform: translateY(40%);
+    transform: translateY(80%);
 }
 }
