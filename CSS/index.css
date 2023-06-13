@@ -105,6 +105,7 @@ body {
 /* HEADER SECTION */
 .header {
   /* min-height: 20vh; */
+min-height:30vh;
   background-image: url("../public/images/pattern-bg-desktop.png");
   place-items: center;
   background-repeat: no-repeat;
@@ -177,7 +178,7 @@ body {
 
 /* MAIN BODY */
 #map {
-  min-height: 60vh;
+  min-height: 100%;
   z-index: -999;
 }
 
@@ -265,9 +266,9 @@ body {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .header {
     background-image: url("../public/images/pattern-bg-mobile.png");
-    min-height: 10vh;
+    
   }
 }
