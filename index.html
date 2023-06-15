@@ -35,7 +35,7 @@
           <img src="./images/icon-arrow.svg" />
         </button>
       </div>
-      <div class="header__search-results bg-white flex ">
+      <div class="header__search-results bg-white ">
         <div id="ip" class="header__search-result flex">
           <h5 class="text-accent-300 fw-200 uppercase">ip address</h5>
           <p class="search-result-data text-accent-200 fw-300"></p>
@@ -52,6 +52,9 @@
           <h5 class="text-accent-300 fw-200 uppercase">isp</h5>
           <p class="search-result-data text-accent-200 fw-300"></p>
         </div>
+        <button class="header__dropdown-button" id="dropdownBtn">
+          <span class="sr-only">down</span>
+        </button>
       </div>
     </header>
     <div class="loader-container">
@@ -69,7 +72,7 @@
 
     <main class="main pos-rel">
       <div id="map"></div>
-      <div class="loader-container--map loader--map-exit">
+      <div  class="loader-container--map loader--map-exit">
         <div class="lds-roller">
           <div></div>
           <div></div>
@@ -84,3 +87,7 @@
     <script type="module" src="/src/index.ts"></script>
   </body>
 </html>
+
+<!-- 
+  Botched the class names at the TS file, window.load section and here in the class name
+ -->

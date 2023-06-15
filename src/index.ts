@@ -11,6 +11,7 @@ const loader = <HTMLDivElement>document.querySelector(".loader-container");
 const loaderMap = <HTMLDivElement>(
   document.querySelector(".loader-container--map")
 );
+const dropdownBtn = document.getElementById("dropdownBtn");
 
 let map = L.map("map", {
   zoom: 40,
@@ -28,7 +29,7 @@ function init() {
   const requestType = ipAddressRegex.test(searchInput) ? "ipAddress" : "domain";
   // if (loaderMap.classList.contains('loader--map-exit'))
 
-  loaderMap.classList.add("loader--map-exit");
+  // loaderMap.classList.add("loader--map-exit");
   async function getData() {
     try {
       const res = await fetch(
@@ -87,9 +88,8 @@ function displaySearchResults(data: any) {
   });
 }
 
-
 //Attach Event Listeners
-searchBar.addEventListener("keyup", (e:any): void => {
+searchBar.addEventListener("keyup", (e: any): void => {
   searchInput = e?.target?.value;
 });
 
@@ -106,4 +106,8 @@ searchBar.addEventListener("keydown", (e) => {
   e.key === "Enter" && init();
 });
 
-
+dropdownBtn?.addEventListener("click", () => {
+  document
+    .querySelector(".header__search-results")
+    ?.classList.toggle("slide-down");
+});
