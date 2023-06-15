@@ -71,8 +71,6 @@ function getMap(coor: any) {
   });
 
   marker.addTo(map);
-
-  //   map.setView(coor, 13);
 }
 
 function displaySearchResults(data: any) {
@@ -111,3 +109,5 @@ dropdownBtn?.addEventListener("click", () => {
     .querySelector(".header__search-results")
     ?.classList.toggle("slide-down");
 });
+
+

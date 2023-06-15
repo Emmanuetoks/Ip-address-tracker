@@ -246,7 +246,7 @@ body {
 
 .header__dropdown-button {
   position: absolute;
-  background-color: var(--clr-primary-200);
+  background-color: rgba(0, 0, 0, 0.445);
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
